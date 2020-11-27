@@ -9,15 +9,24 @@ end
 
 class LinkedList
   #setup head and tail
-  # def initialize
-  #   @head = nil
-  #   @tail = nil
-  # end 
+  def initialize
+    @head = nil
+    @tail = nil
+  end 
   
   def add(number)
     node = Node.new(number)
-    node.next_node = nil
-    puts node.value 
+    # puts node.value
+    if @head.nil?
+      @head = node
+    end
+    current = @head
+    puts current.next_node.nil?
+
+    while !current.next_node.nil?
+      current = current.next_node
+    end
+    current.next_node = node
   end
 
   # def get(index)
@@ -27,12 +36,11 @@ class LinkedList
 end
 
 list = LinkedList.new
-
-list.add(3)
+list.add(0)
 list.add(5)
-list.add(6)
-list.add(1)
-list.add(10)
+# list.add(6)
+# list.add(1)
+# list.add(10)
 
 
 # puts list.get(1)
